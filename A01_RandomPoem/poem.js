@@ -9,6 +9,9 @@ var zufälligesgedicht;
     let objekte = [
         "Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"
     ];
+    console.log(subjekte),
+        console.log(verben),
+        console.log(objekte);
     for (let index = 6; index >= 1; index--) {
         let vollständigersatz = getVerse(subjekte, verben, objekte);
         console.log(vollständigersatz);

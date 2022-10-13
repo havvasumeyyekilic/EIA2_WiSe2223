@@ -11,6 +11,10 @@ namespace zufälligesgedicht {
         "Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"
     ];
 
+    console.log(subjekte),
+    console.log(verben),
+    console.log(objekte)
+
     for (let index: number = 6; index >= 1; index--) {
         let vollständigersatz: string = getVerse(subjekte, verben, objekte);
         console.log(vollständigersatz);
