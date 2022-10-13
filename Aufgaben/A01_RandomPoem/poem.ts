@@ -16,12 +16,12 @@ namespace zufälligesgedicht {
         console.log(vollständigersatz);
     }
 
-    function getVerse(_subjekte: string[], _verben: string[], objekte:string[]): string {
+    function getVerse(_subjekte: string[], _verben: string[], _objekte:string[]): string {
         let zufälligsubjekt: number = Math.floor(Math.random() * _subjekte.length);
         let zufälligverben: number = Math.floor(Math.random() * _subjekte.length);
         let zufälligobjekte: number = Math.floor(Math.random() * _subjekte.length);
 
-        let verse: string = subjekte[zufälligsubjekt] + " " + verben[zufälligverben] + " " + _objekte[zufälligobjekte] + ".";
+        let verse: string = _subjekte[zufälligsubjekt] + " " + _verben[zufälligverben] + " " + _objekte[zufälligobjekte] + ".";
 
         _subjekte.splice(zufälligsubjekt, 1);
         _verben.splice(zufälligverben, 1);
