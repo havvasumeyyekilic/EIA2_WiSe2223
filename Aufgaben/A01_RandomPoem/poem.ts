@@ -1,4 +1,12 @@
-namespace zufälligesgedicht {
+/*
+Aufgabe: 1. Zufallsgedicht
+Name: Havva Sümeyye Kilic
+Matrikelnr: 271123
+Datum: 12.10.2022
+Quellen: Paula Jordans, AAnya Khetarpal, Julia Befus, Pia Giovannelli
+*/
+namespace randompoem {
+
     let subjekte: string[] = [
         "Harry", "Hermine", "Dumbledore", "Ron", "Snape", "Draco"
     ];
@@ -16,11 +24,11 @@ namespace zufälligesgedicht {
     console.log(objekte)
 
     for (let index: number = 6; index >= 1; index--) {
-        let vollständigersatz: string = getVerse(subjekte, verben, objekte);
+        let vollständigersatz: string = getVerse(subjekte, verben, objekte)
         console.log(vollständigersatz);
     }
 
-    function getVerse(_subjekte: string[], _verben: string[], _objekte:string[]): string {
+    function getVerse(_subjekte: string[], _verben: string[], _objekte:  string[]): string {
         let zufälligsubjekt: number = Math.floor(Math.random() * _subjekte.length);
         let zufälligverben: number = Math.floor(Math.random() * _subjekte.length);
         let zufälligobjekte: number = Math.floor(Math.random() * _subjekte.length);
