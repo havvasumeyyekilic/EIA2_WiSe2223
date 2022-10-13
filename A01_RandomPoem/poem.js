@@ -1,26 +1,27 @@
 var zufälligesgedicht;
 (function (zufälligesgedicht) {
-    var subjekte = [
+    let subjekte = [
         "Harry", "Hermine", "Dumbledore", "Ron", "Snape", "Draco"
     ];
-    var verben = [
+    let verben = [
         "braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"
     ];
-    var objekte = [
+    let objekte = [
         "Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"
     ];
-    for (var index = 6; index >= 1; index--) {
-        var vollständigersatz = getVerse(subjekte, verben, objekte);
+    for (let index = 6; index >= 1; index--) {
+        let vollständigersatz = getVerse(subjekte, verben, objekte);
         console.log(vollständigersatz);
     }
     function getVerse(_subjekte, _verben, _objekte) {
-        var zufälligsubjekt = Math.floor(Math.random() * _subjekte.length);
-        var zufälligverben = Math.floor(Math.random() * _subjekte.length);
-        var zufälligobjekte = Math.floor(Math.random() * _subjekte.length);
-        var verse = _subjekte[zufälligsubjekt] + " " + _verben[zufälligverben] + " " + _objekte[zufälligobjekte] + ".";
+        let zufälligsubjekt = Math.floor(Math.random() * _subjekte.length);
+        let zufälligverben = Math.floor(Math.random() * _subjekte.length);
+        let zufälligobjekte = Math.floor(Math.random() * _subjekte.length);
+        let verse = _subjekte[zufälligsubjekt] + " " + _verben[zufälligverben] + " " + _objekte[zufälligobjekte] + ".";
         _subjekte.splice(zufälligsubjekt, 1);
         _verben.splice(zufälligverben, 1);
         _objekte.splice(zufälligobjekte, 1);
         return verse;
     }
 })(zufälligesgedicht || (zufälligesgedicht = {}));
+//# sourceMappingURL=poem.js.map
