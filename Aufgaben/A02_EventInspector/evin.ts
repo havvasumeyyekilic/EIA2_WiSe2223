@@ -1,28 +1,36 @@
+/*
+Aufgabe: 1. Event Inspector
+Name: Havva Sümeyye Kilic
+Matrikelnr: 271123
+Datum: 20.10.2022
+Quellen: Paula Jordans, Julia Befus, Aanya Khetarpal, Pia Giovannelli
+*/
+
 namespace eventInspector {
 
-    window.addEventListener("load", handleLoad);
-
+    window.addEventListener("load", handleLoad);     
+    
     function handleLoad(_event: Event): void {
+
         document.addEventListener("mousemove", setInfoBox);
         let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
         body.addEventListener("keyup", logInfo);
         body.addEventListener("click", logInfo);
 
-    }
+    } 
 
     function setInfoBox(_event: MouseEvent): void {
         let x: number = _event.pageX + 10;
         let y: number = _event.pageY + 10;
-        let spanmouse: HTMLSpanElement = <HTMLElement>document.querySelector("span");
-        spanmouse.style.left = x + 10 + "px";
-        spanmouse.style.top = y + 10 + "px";
+        let spanForMouseCursor: HTMLSpanElement = <HTMLSpanElement>document.querySelector("span");
+        spanForMouseCursor.style.left = x + "px";
+        spanForMouseCursor.style.top = y + "px";
     }
 
     function logInfo(_event: Event): void {
         console.log(_event.type);
         console.log(_event.target);
         console.log(_event.currentTarget);
-        console.log(_event);
+        console.log(_event);  
     }
-
 }

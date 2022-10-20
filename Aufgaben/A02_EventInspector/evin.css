@@ -1,11 +1,11 @@
 html {
 
-    background-color: rgb(168, 206, 255);
+    background-color: rgb(167, 126, 177);
 }
 
 h1 {
-
-    color: rgb(83, 119, 153);
+    color: rgb(89, 26, 87);
+    font-family: 'Courier New', Courier, monospace;
 
 }
 
@@ -18,7 +18,9 @@ h1 {
     width: 500px;
     margin-top: 80px;
     margin-left: 350px;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(95, 50, 116);
+    border: 2px solid rgb(198, 27, 255);
+    border-radius: 25px;
 
 }
 
@@ -31,8 +33,9 @@ h1 {
     width: 500px;
     margin-top: 80px;
     margin-left: 350px;
-    background-color: rgb(182, 182, 182);
-
+    background-color: rgb(95, 50, 116);
+    border: 2px solid rgb(198, 27, 255);
+    border-radius: 25px;
 }
 
 span {
@@ -42,6 +45,8 @@ span {
     width: 100px;
     height: 100px;
     offset: right;
-    background-color: rgb(83, 119, 153);
+    background-color: rgb(206, 133, 239);
+    border: 2px solid rgb(198, 27, 255);
+    border-radius: 25px;
 
 }

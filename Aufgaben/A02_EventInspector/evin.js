@@ -1,3 +1,10 @@
+/*
+Aufgabe: 1. Event Inspector
+Name: Havva Sümeyye Kilic
+Matrikelnr: 271123
+Datum: 20.10.2022
+Quellen: Paula Jordans, Julia Befus, Aanya Khetarpal, Pia Giovannelli
+*/
 var eventInspector;
 (function (eventInspector) {
     window.addEventListener("load", handleLoad);
@@ -10,9 +17,9 @@ var eventInspector;
     function setInfoBox(_event) {
         let x = _event.pageX + 10;
         let y = _event.pageY + 10;
-        let spanmouse = document.querySelector("span");
-        spanmouse.style.left = x + 10 + "px";
-        spanmouse.style.top = y + 10 + "px";
+        let spanForMouseCursor = document.querySelector("span");
+        spanForMouseCursor.style.left = x + "px";
+        spanForMouseCursor.style.top = y + "px";
     }
     function logInfo(_event) {
         console.log(_event.type);
