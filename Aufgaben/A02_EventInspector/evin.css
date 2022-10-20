@@ -5,13 +5,12 @@ html {
 
 h1 {
     color: rgb(89, 26, 87);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 
 #div0 {
 
-    border: thin solid black;
     border-width: 7px;
     float: left;
     height: 400px;
@@ -26,13 +25,12 @@ h1 {
 
 #div1 {
 
-    border: thin solid black;
     border-width: 7px;
     float: left;
     height: 400px;
     width: 500px;
     margin-top: 80px;
-    margin-left: 350px;
+    margin-right: 250px;
     background-color: rgb(95, 50, 116);
     border: 2px solid rgb(198, 27, 255);
     border-radius: 25px;
@@ -41,12 +39,23 @@ h1 {
 span {
 
     position: fixed;
-    z-index: 100;
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 60px;
     offset: right;
     background-color: rgb(206, 133, 239);
     border: 2px solid rgb(198, 27, 255);
-    border-radius: 25px;
+    border-radius: 15px;
+
+}
+
+button {
+    width: 55px;
+    height: 50px;
+    background-color: rgb(170, 96, 183);
+    border: 2px solid rgb(135, 48, 221);
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
