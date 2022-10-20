@@ -21,7 +21,7 @@ namespace eventInspector {
     function logInfo(_event: Event): void {
         console.log(_event.type);
         console.log(_event.target);
-        console.log(event.currentTarget);
+        console.log(_event.currentTarget);
         console.log(_event);
     }
 
