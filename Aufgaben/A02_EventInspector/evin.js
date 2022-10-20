@@ -11,8 +11,8 @@ var eventInspector;
         let x = _event.pageX + 10;
         let y = _event.pageY + 10;
         let spanmouse = document.querySelector("span");
-        spanmouse.style.left = x + "px";
-        spanmouse.style.top = y + "px";
+        spanmouse.style.left = x + 10 + "px";
+        spanmouse.style.top = y + 10 + "px";
     }
     function logInfo(_event) {
         console.log(_event.type);
