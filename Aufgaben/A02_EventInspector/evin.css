@@ -1,0 +1,47 @@
+html {
+
+    background-color: rgb(168, 206, 255);
+}
+
+h1 {
+
+    color: rgb(83, 119, 153);
+
+}
+
+#div0 {
+
+    border: thin solid black;
+    border-width: 7px;
+    float: left;
+    height: 400px;
+    width: 500px;
+    margin-top: 80px;
+    margin-left: 350px;
+    background-color: rgb(182, 182, 182);
+
+}
+
+#div1 {
+
+    border: thin solid black;
+    border-width: 7px;
+    float: left;
+    height: 400px;
+    width: 500px;
+    margin-top: 80px;
+    margin-left: 350px;
+    background-color: rgb(182, 182, 182);
+
+}
+
+span {
+
+    position: fixed;
+    z-index: 100;
+    width: 100px;
+    height: 100px;
+    offset: right;
+    background-color: rgb(83, 119, 153);
+
+}

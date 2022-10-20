@@ -1,5 +1,12 @@
-var zufälligesgedicht;
-(function (zufälligesgedicht) {
+/*
+Aufgabe: 1. Zufallsgedicht
+Name: Havva Sümeyye Kilic
+Matrikelnr: 271123
+Datum: 12.10.2022
+Quellen: Paula Jordans, AAnya Khetarpal, Julia Befus, Pia Giovannelli
+*/
+var randompoem;
+(function (randompoem) {
     let subjekte = [
         "Harry", "Hermine", "Dumbledore", "Ron", "Snape", "Draco"
     ];
@@ -26,5 +33,5 @@ var zufälligesgedicht;
         _objekte.splice(zufälligobjekte, 1);
         return verse;
     }
-})(zufälligesgedicht || (zufälligesgedicht = {}));
+})(randompoem || (randompoem = {}));
 //# sourceMappingURL=poem.js.map
