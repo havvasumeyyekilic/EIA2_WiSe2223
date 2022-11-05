@@ -11,17 +11,37 @@
 </head>
 </head>
 <body>
-    <div class="wrapper">
+    <form>
+        <div class="container">
+            <h1>shopping list</h1>
+            <h2>add new item</h2>
 
-        <h1>Shopping List</h1>
-        <h2 class="text">
-            <span id="counterToDo">0 </span> in Total
-        </h2>
-        <input id="toDo" type="text" placeholder="Add another Task" required>
-        <input type="number" placeholder="Amount" placeholder="Menge">
-        <input type="text" id="note" placeholder="Notes">
-        <input type="date" id="date">
-        <div class="toDoWrapper" id="toDoWrapper"></div>
-    </div>
+            <fieldset id="fsItem">
+                <input class="item" type="text" name="Item" placeholder="item" required>
+            </fieldset>
+            <fieldset id="fsAmount">
+                <input class="amount" type="number" name="Amount" placeholder="amount" required>
+            </fieldset>
+            <fieldset id="fsDate">
+                <input class="date" type="date" name="Date" placeholder="date" required>
+            </fieldset>
+            <fieldset id="nextBuy">
+                <h3> buy again? </h3>
+                <input class="nextBuy" type="checkbox" name="Checkbox">
+            </fieldset>
+            <fieldset id="fsComment">
+                <textarea class="comment" name="Area" rows="3" placeholder="comments"></textarea>
+            </fieldset>
+
+            <div id="output">
+
+            </div>
+            <div id="check">
+
+            </div>
+
+
+    </form>
+
 </body>
 </html>

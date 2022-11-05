@@ -2,53 +2,108 @@
 Aufgabe: Einkaufsliste
 Name: Havva Sümeyye Kilic
 Matrikelnr: 271123
-Datum: 27.10.2022
+Datum: 05.11.2022
 Quellen: Paula Jordans, Julia Befus, Aanya Khetarpal, Pia Giovannelli, letztes Semester ähnliche Aufgabe gemacht
 */
-var shoppingList;
-(function (shoppingList) {
-    window.addEventListener("load", function () {
-        const input = document.getElementById("toDo");
-        const wrapper = document.getElementById("toDoWrapper");
-        let todoCount = 0;
-        input.addEventListener("keydown", function (event) {
-            if (event.key == "Enter") {
-                createToDo();
-                clearInput();
+var shoppinglistA04;
+(function (shoppinglistA04) {
+    let item;
+    let amount;
+    let dateData;
+    let comment;
+    let nextPurchase;
+    let amountItems = 0;
+    window.addEventListener("load", loadList);
+    function loadList() {
+        document.querySelector("h2").addEventListener("click", loadInput);
+        loadData();
+    }
+    function loadData() {
+        for (let counter = 0; counter < savedInputs.length; counter++) {
+            item = savedInputs[counter].savedItem;
+            amount = savedInputs[counter].savedAmount;
+            dateData = savedInputs[counter].savedDate;
+            comment = savedInputs[counter].savedComment;
+            let nextPurchaseString = savedInputs[counter].savedPurchase.toString();
+            if (nextPurchaseString == "false") {
+                nextPurchase = "";
             }
-        });
-        function updateCounter() {
-            document.querySelector("#counterToDo").innerHTML = String(todoCount);
+            else {
+                nextPurchase = " buy";
+            }
+            loadItem();
         }
-        function clearInput() {
-            input.value = "";
+    }
+    function loadInput() {
+        let formData = new FormData(document.forms[0]);
+        item = formData.get("Item").toString();
+        amount = Number(formData.get("Amount"));
+        dateData = new Date().toLocaleDateString();
+        comment = formData.get("Area").toString();
+        let nextPurchaseString = formData.get("Checkbox");
+        if (nextPurchaseString == null) {
+            nextPurchase = "";
         }
-        function createToDo() {
-            todoCount++;
-            updateCounter();
-            const todoItem = document.createElement("div");
-            const checkbox = document.createElement("input");
-            const label = document.createElement("label");
-            const trashButton = document.createElement("i");
-            todoItem.className = "todoItem";
-            checkbox.type = "checkbox";
-            checkbox.className = "checkbox";
-            label.innerHTML = input.value;
-            label.className = "divLabel";
-            trashButton.className = "fas fa-trash-alt";
-            wrapper.appendChild(todoItem);
-            todoItem.appendChild(checkbox);
-            todoItem.appendChild(label);
-            todoItem.appendChild(trashButton);
-            trashButton.addEventListener("click", function () {
-                deleteItem(todoItem);
-            });
+        else {
+            nextPurchase = " buy";
         }
-        function deleteItem(item) {
-            wrapper.removeChild(item);
-            todoCount--;
-            updateCounter();
-        }
-    });
-})(shoppingList || (shoppingList = {}));
+        loadItem();
+    }
+    function loadItem() {
+        let newElement = document.createElement("div");
+        newElement.innerHTML = dateData + " " + amount + " " + item + " " + comment + " " + nextPurchase;
+        let getElement = document.querySelector("#output");
+        getElement.appendChild(newElement);
+        newElement.className = "outputItem" + amountItems;
+        newElement.id = amountItems.toString();
+        newElement.style.marginTop = "-10px";
+        let newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox";
+        newCheckbox.name = "CheckboxName" + amountItems;
+        getElement = document.querySelector("#output");
+        getElement.appendChild(newCheckbox);
+        newCheckbox.className = "checkbox" + amountItems;
+        newCheckbox.id = "checkbox" + amountItems.toString();
+        newCheckbox.name = "Checkbox" + amountItems.toString();
+        newCheckbox.style.position = "relative";
+        newCheckbox.style.left = "-85px";
+        newCheckbox.style.top = "-14px";
+        let newEdit = document.createElement("div");
+        newEdit.innerHTML = "<i class='fa-solid fa-pen fa-lg'></i>";
+        getElement.appendChild(newEdit);
+        newEdit.className = "edit" + amountItems;
+        newEdit.id = "edit" + amountItems.toString();
+        newEdit.style.position = "relative";
+        newEdit.style.top = "-41px";
+        newEdit.style.width = "20px";
+        newEdit.style.left = "165px";
+        let newTrash = document.createElement("div");
+        newTrash.innerHTML = "<img id='" + amountItems + "' " + "src='./trash-solid.svg'>";
+        newElement.appendChild(newTrash);
+        newTrash.className = "trash" + amountItems;
+        newTrash.style.width = "15px";
+        newTrash.style.position = "relative";
+        newTrash.style.left = "250px";
+        newTrash.style.top = "7px";
+        document.querySelector(".trash" + amountItems).addEventListener("click", deleteItem);
+        document.querySelector(".checkbox" + amountItems).addEventListener("click", checkboxNextPurchase);
+        document.querySelector(".edit" + amountItems).addEventListener("click", editEntry);
+    }
+    function deleteItem(_event) {
+        console.log("delete");
+        let x = _event.target.id;
+        let outputElementId = document.getElementById(x);
+        let editElementId = document.getElementById("edit" + x);
+        let checkboxElementId = document.getElementById("checkbox" + x);
+        checkboxElementId.remove();
+        outputElementId.remove();
+        editElementId.remove();
+    }
+    function checkboxNextPurchase(_event) {
+        console.log("Checkbox Liste: Click -> checkboxNextPurchase()");
+    }
+    function editEntry() {
+        console.log("Edit click -> editEntry()");
+    }
+})(shoppinglistA04 || (shoppinglistA04 = {}));
 //# sourceMappingURL=shoppinglist.js.map
