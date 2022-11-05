@@ -67,7 +67,7 @@ textarea {
     left: 18px;
     top: -20px;
     text-align: center;
-    border-top: black solid;
+    border-top: rgb(0, 0, 0) solid;
     padding-top: 25px;
     width: 350px;
     height: 350px;

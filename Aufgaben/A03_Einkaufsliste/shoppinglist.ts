@@ -3,7 +3,7 @@ Aufgabe: Einkaufsliste
 Name: Havva Sümeyye Kilic
 Matrikelnr: 271123
 Datum: 05.11.2022
-Quellen: Paula Jordans, Julia Befus, Aanya Khetarpal, Pia Giovannelli, letztes Semester ähnliche Aufgabe gemacht
+Quellen: Bastian Aberle, Paula Jordans, Julia Befus, Aanya Khetarpal, Pia Giovannelli, letztes Semester ähnliche Aufgabe gemacht
 */
 namespace shoppinglistA04 {
 
