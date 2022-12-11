@@ -1,3 +1,11 @@
+/*
+Aufgabe: 9.1 OldMCDonaldFarm
+Name: Havva Sümeyye Kilic
+Matrikelnr: 271123
+Datum: 09.12.2022
+Quellen: Paula Jordans, Julia Befus, Aanya Khetarpal, Pia Giovannelli :)
+*/
+
 namespace Farm {
 
     class Animal {
