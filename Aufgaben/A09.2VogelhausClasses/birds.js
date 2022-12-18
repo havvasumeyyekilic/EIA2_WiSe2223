@@ -1,69 +1,55 @@
-var Vogelhaus_obj;
-(function (Vogelhaus_obj) {
-    class Birds {
+var Vogelhaus;
+(function (Vogelhaus) {
+    class Bird {
         position;
         velocity;
-        scale;
-        constructor(_position, _velocity, _scale) {
-            this.position = _position;
-            this.velocity = _velocity;
-            this.scale = _scale;
+        size;
+        constructor(_size) {
+            this.position = new Vogelhaus.VectorBird(0, 0);
+            this.velocity = new Vogelhaus.VectorBird(0, 0);
+            this.size = _size;
         }
         draw() {
-            let positionx = 800;
-            let positiony = 339;
-            //Unterkörper
-            let radius2 = 12;
-            Vogelhaus_obj.crc2.beginPath();
-            Vogelhaus_obj.crc2.arc(positionx, positiony, radius2, 0, 2 * Math.PI);
-            Vogelhaus_obj.crc2.fill();
-            Vogelhaus_obj.crc2.stroke();
-            Vogelhaus_obj.crc2.closePath();
-            //Kopf
-            let radius = 10;
-            Vogelhaus_obj.crc2.beginPath();
-            Vogelhaus_obj.crc2.arc(positionx - 10, positiony - 10, radius, 0, 2 * Math.PI);
-            Vogelhaus_obj.crc2.fill();
-            Vogelhaus_obj.crc2.stroke();
-            Vogelhaus_obj.crc2.closePath();
-            //Schnabel
-            Vogelhaus_obj.crc2.beginPath();
-            Vogelhaus_obj.crc2.moveTo(positionx - 20, positiony - 10);
-            Vogelhaus_obj.crc2.lineTo(positionx - 25, positiony - 5);
-            Vogelhaus_obj.crc2.stroke();
-            Vogelhaus_obj.crc2.closePath();
-            Vogelhaus_obj.crc2.beginPath();
-            Vogelhaus_obj.crc2.moveTo(positionx - 19, positiony - 5);
-            Vogelhaus_obj.crc2.lineTo(positionx - 25, positiony - 5);
-            Vogelhaus_obj.crc2.stroke();
-            Vogelhaus_obj.crc2.closePath();
-            //Bein
-            Vogelhaus_obj.crc2.beginPath();
-            Vogelhaus_obj.crc2.moveTo(positionx, positiony + 5);
-            Vogelhaus_obj.crc2.lineTo(positionx, positiony + 20);
-            Vogelhaus_obj.crc2.stroke();
-            Vogelhaus_obj.crc2.closePath();
-            //Fuß
-            Vogelhaus_obj.crc2.beginPath();
-            Vogelhaus_obj.crc2.moveTo(positionx, positiony + 20);
-            Vogelhaus_obj.crc2.lineTo(positionx - 5, positiony + 20);
-            Vogelhaus_obj.crc2.stroke();
-            Vogelhaus_obj.crc2.closePath();
+            console.log("draw bird");
+            let canvas = document.querySelector("canvas");
+            let crc2 = canvas.getContext("2d");
+            let rAuge = 1;
+            crc2.save();
+            crc2.beginPath();
+            crc2.translate(this.position.x, this.position.y);
+            crc2.fillStyle = "black";
+            crc2.arc(0, 0, rAuge, 0, 2 * Math.PI);
+            crc2.fill();
+            crc2.closePath();
+            crc2.restore();
+            crc2.save();
+            crc2.beginPath();
+            crc2.translate(this.position.x, this.position.y);
+            crc2.moveTo(1, 0);
+            crc2.bezierCurveTo(8, -5, 15, -10, 20, -2);
+            crc2.moveTo(-1, 0);
+            crc2.bezierCurveTo(-8, -5, -15, -10, -20, -2);
+            crc2.stroke();
+            crc2.closePath();
+            crc2.restore();
         }
-        update() {
+        move(_timeslice) {
+            console.log("move bird");
+            let canvas = document.querySelector("canvas");
+            let crc2 = canvas.getContext("2d");
+            let offset = new Vogelhaus.Vector(this.velocity.x, this.velocity.y);
+            offset.scale(_timeslice);
+            this.position.add(offset);
             if (this.position.x < 0)
-                this.position.x += Vogelhaus_obj.canvas.width;
+                this.position.x += crc2.canvas.width;
             if (this.position.y < 0)
-                this.position.y += Vogelhaus_obj.canvas.height;
-            if (this.position.x > Vogelhaus_obj.canvas.width)
-                this.position.x -= Vogelhaus_obj.canvas.width;
-            if (this.position.y > Vogelhaus_obj.canvas.height)
-                this.position.y -= Vogelhaus_obj.canvas.height;
-            this.position.x += this.velocity.x;
-            this.position.y += this.velocity.y;
-            this.draw();
+                this.position.y += 420;
+            if (this.position.x > crc2.canvas.width)
+                this.position.x -= crc2.canvas.width;
+            if (this.position.y > crc2.canvas.height)
+                this.position.y -= crc2.canvas.height;
         }
     }
-    Vogelhaus_obj.Birds = Birds;
-})(Vogelhaus_obj || (Vogelhaus_obj = {}));
+    Vogelhaus.Bird = Bird;
+})(Vogelhaus || (Vogelhaus = {}));
 //# sourceMappingURL=birds.js.map
