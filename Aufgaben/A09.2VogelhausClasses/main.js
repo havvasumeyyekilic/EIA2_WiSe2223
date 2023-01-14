@@ -1,7 +1,7 @@
 /*
 Aufgabe: L09.2_Vogelhaus
 Name: Havva Sümeyye Kilic
-Matrikel: 271121
+Matrikel: 271123
 Datum: 18.12.2022
 Quellen: Pia Giovannelli, Julia Befus, Aanya Khetarpal, Paula Jordans
 */
@@ -41,7 +41,7 @@ var Vogelhaus;
         console.log("Update");
         crc2.putImageData(background, 0, 0);
         for (let snowflake of snowflakes) {
-            snowflake.moveBy(1 / 400);
+            snowflake.moveBy(1 / 400); // eigene Zahl aus dem Code
             snowflake.draw();
         }
         for (let bird of birds) {
@@ -300,7 +300,6 @@ var Vogelhaus;
         crc2.fill();
         crc2.closePath();
         crc2.restore();
-        //Mund
         //Knöpfe
         crc2.save();
         crc2.beginPath();

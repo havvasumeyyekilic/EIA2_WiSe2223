@@ -1,0 +1,16 @@
+@media only screen and (max-width: 1050px) {
+    canvas {
+        width: 100%;
+    }
+    }
+
+canvas {
+    border: solid rgb(199, 67, 211);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+}
+body {
+    background-color: rgb(105, 22, 160);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+}

@@ -58,8 +58,8 @@ namespace Vogelhaus {
         crc2.putImageData(background, 0, 0);
 
         for (let snowflake of snowflakes) {
-            snowflake.moveBy(1 / 400);
-            snowflake.draw();
+            snowflake.moveBy(1 / 400); // eigene Zahl aus dem Code
+            snowflake.draw(); 
         }
 
         for (let bird of birds) {
@@ -369,10 +369,7 @@ namespace Vogelhaus {
         crc2.fill();
         crc2.closePath();
         crc2.restore();
-
-       //Mund
         
-
         //Knöpfe
         crc2.save();
         crc2.beginPath();
